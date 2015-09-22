@@ -427,35 +427,45 @@ var resizePizzas = function(size) {
     var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
     var oldsize = oldwidth / windowwidth;
 
+    // TODO: change to 3 sizes? no more xl?
     // Changes the slider value to a percent width
-    function changePizzaSizes (size) {
+    function sizeSwitcher (size) {
       switch(size) {
         case "1":
-          newWidth = 25;
-          break;
+          return 0.25;
         case "2":
-          newWidth = 33.3;
-          break;
+          return 0.3333;
         case "3":
-          newWidth = 50;
-          break;
+          return 0.5;
         default:
           console.log("bug in sizeSwitcher");
       }
-    
-
-      // Iterates through pizza elements on the page and changes their widths 
-      // added the randomPizzas variable in order to dodge the call of document.querySelectorAll at each iteration
-      // removed the determineDx function in order to simplify the code and remove the forced layout
-    
-      var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
-
-      for (var i = 0; i < randomPizzas.length; i++) {
-        randomPizzas[i].style.width = newWidth + "%";
-      }
     }
-    changePizzaSizes(size);
+
+    var newsize = sizeSwitcher(size);
+    var dx = (newsize - oldsize) * windowwidth;
+
+    return dx;
   }
+
+  //Declare variables to be used in changePizzaSizes and determineDx to avoid code repetition
+  //var randomPizzaContainers = document.querySelectorAll(".randomPizzaContainer")
+  var randomPizzaContainers = document.getElementsByClassName("randomPizzaContainer");
+
+  //got dx and newwidth out of the for loop in order to avoid force synchronous layout
+
+  var dx = determineDx(randomPizzaContainers[0], size);
+  var newwidth = (randomPizzaContainers[0].offsetWidth + dx) + 'px';
+  
+  // Iterates through pizza elements on the page and changes their widths
+  function changePizzaSizes(size) {
+    for (var i = 0, len = randomPizzaContainers.length; i < len; i++) {
+      randomPizzaContainers[i].style.width = newwidth;
+    }
+  }
+
+  changePizzaSizes(size);
+
 
   
 
