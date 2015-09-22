@@ -442,7 +442,7 @@ var resizePizzas = function(size) {
         default:
           console.log("bug in sizeSwitcher");
       }
-  }
+    }
 
     // Iterates through pizza elements on the page and changes their widths
     function changePizzaSizes(size) {
