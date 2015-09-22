@@ -428,7 +428,7 @@ var resizePizzas = function(size) {
     var oldsize = oldwidth / windowwidth;
 
     // Changes the slider value to a percent width
-    function sizeSwitcher (size) {
+    function changePizzaSizes (size) {
       switch(size) {
         case "1":
           newWidth = 25;
@@ -442,10 +442,12 @@ var resizePizzas = function(size) {
         default:
           console.log("bug in sizeSwitcher");
       }
-    }
+    
 
-    // Iterates through pizza elements on the page and changes their widths
-    function changePizzaSizes(size) {
+      // Iterates through pizza elements on the page and changes their widths 
+      // added the randomPizzas variable in order to dodge the call of document.querySelectorAll at each iteration
+      // removed the determineDx function in order to simplify the code and remove the forced layout
+    
       var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
 
       for (var i = 0; i < randomPizzas.length; i++) {
