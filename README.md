@@ -1,12 +1,11 @@
-Hi,
+# Website Optimization
 
-This is a portfolio website optimized for speed.
+In this project I optimized an inefficient web application's JavaScript, CSS and assets delivery, ensuring it runs at 60fps and achieves a PageSpeed score of at least 90.
 
-In order to use it, open "index".html" in your favorite web browser. Click on the links to visit the sub pages.
+In order to access it in your browser:
 
-Enjoy!
+* click in the following link redirecting to my Github Pages page for this project.
 
-For reviewer:
+or
 
-In main.js (that I minified into the main-min.js file), I simply re-used the technique that was showed by Cameron in Elyad's class Website Performance Optimization.
-Eliminate the call of document.querySelectorAll(".randomPizzaContainer") by placing it in the variable randomPizzas. Then iterate through this variable to change the size of the pizzas.
+* download the zip file of my project on your computer and open index.html in your favorite browser
