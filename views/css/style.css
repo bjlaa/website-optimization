@@ -29,10 +29,25 @@ form {
   font-weight: 800;
 }
 
+/*added some useful code found on this page: http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css*/
 .mover {
   position: fixed;
   width: 256px;
-  z-index: -1;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .randomPizzaContainer {
@@ -48,4 +63,6 @@ form {
 
  .container {
   background-color: rgba(240, 60, 60, 0.8);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
