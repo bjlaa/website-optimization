@@ -4,7 +4,7 @@ In this project I optimized an inefficient web application's JavaScript, CSS and
 
 In order to access it in your browser:
 
-* click in the following link redirecting to my Github Pages page for this project.
+* click in the following link redirecting to my [Github Pages](http://bjlaa.github.io/website-optimization) page for this project.
 
 or
 
